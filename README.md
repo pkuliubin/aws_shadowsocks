@@ -23,8 +23,19 @@ $ sudo ./shadowsocks.sh 2>&1 | tee shadowsocks.log
 ```
 如果提示 `https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh` 无法访问(404)，直接去[Teddysun/shadowsocks_install
 ](https://github.com/teddysun/shadowsocks_install/) 找 `shadowsocks.sh` 的url，替换上面即可
-3. 
-### aws服务器端
-### windows客户端
 
+shadowsocks安装过程中，会要求输入默认密码和端口，按自己需要输入即可，但记得保留。这是之后使用代理需要用到的
+
+如一切正常，最后命令行提示`Congratulations, shadowsocks server install completed!`，同时ss的server ip/port 和密码都会再显示
+
+最后编辑 `/etc/shadowsocks.json`，修改`server`字段为`"server"="0.0.0.0"`，再启动ss `$ sudo /etc/init.d/shadowsocks start`，shadowsocks配置就完成了
+
+### aws服务器端
+1. 修改aws服务器端开放的端口。在aws控制台，点击刚才启动实例的安全组，在“入站”中，点击编辑，添加自定义的 TCP 和 UDP 规则，端口为`8989`（或自己设置的ss端口），来源选择任何位置或者自定义ip
+2. 以上，aws ec2 服务器设置和shadowsocks配置均已完成
+### windows客户端
+1. windows下，去[shadowsocks](https://github.com/shadowsocks/shadowsocks-windows)下载最新的release客户端，按照说明配置即可
 ## firefox+fireproxy
+1. firefox下，建议配合 fireproxy 使用，毕竟国内网站并不需要代理。配置代理规则时，可订阅[gfwlist](https://github.com/gfwlist/gfwlist)
+
+# 祝翻墙愉快！
