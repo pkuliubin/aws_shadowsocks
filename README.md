@@ -38,4 +38,4 @@ shadowsocks安装过程中，会要求输入默认密码和端口，按自己需
 ## firefox+fireproxy
 1. firefox下，建议配合 fireproxy 使用，毕竟国内网站并不需要代理。配置代理规则时，可订阅[gfwlist](https://github.com/gfwlist/gfwlist)
 
-# 祝翻墙愉快！
+## 祝翻墙愉快！
