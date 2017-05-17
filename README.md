@@ -16,11 +16,13 @@ aws提供12月的免费vps免费试用，直接去[AWS官网](https://aws.amazon
 ## shadowsocks配置
 1. ssh登陆aws虚拟机: 依旧在aws EC2 控制控制台下，点击“连接”，按照提示，修改刚才下载到本地的密钥对文件权限。然后 ssh 连接即可
 2. 安装shadowsocks：登陆虚拟机后，按照如下安装shadowsocks
+``` shell
+$ wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh 
+$ chmod +x shadowsocks.sh
+$ sudo ./shadowsocks.sh 2>&1 | tee shadowsocks.log
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh 
-chmod +x shadowsocks.sh
-sudo ./shadowsocks.sh 2>&1 | tee shadowsocks.log
-```
+如果提示 `https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh` 无法访问(404)，直接去[Teddysun/shadowsocks_install
+](https://github.com/teddysun/shadowsocks_install/) 找 `shadowsocks.sh` 的url，替换上面即可
 3. 
 ### aws服务器端
 ### windows客户端
